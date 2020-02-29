@@ -125,30 +125,6 @@ def get_onto_NER_html (annotated_text):
     return html_output
     
     
-if sparknlp_model == 'xx':#'recognize_entities_dl':
-    
-    st.header("Named Entities")
-    st.sidebar.header("Named Entities")
-    
-    label_set = ['LOC','PER','ORG','MISC']
-    
-    labels = st.sidebar.multiselect(
-        "Entity labels", options=label_set, default=list(label_set)
-    )
-    html = get_onto_NER_html (annotated_text) #displacy.render(doc, style="ent", options={"ents": labels})
-    # Newlines seem to mess with the rendering
-    html = html.replace("\n", " ")
-    st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)
-    
-    st.write('')
-    st.write('')
-
-    df = pd.DataFrame({'token':annotated_text['token'], 'label':annotated_text['ner'],
-                      'corrected':annotated_text['spell'], 'POS':annotated_text['pos'],
-                      'lemmas':annotated_text['lemmas'], 'stems':annotated_text['stems']})
-    st.dataframe(df)
-    
-    
 if 'ner' in annotated_text.keys():
     
     st.header("Named Entities")
