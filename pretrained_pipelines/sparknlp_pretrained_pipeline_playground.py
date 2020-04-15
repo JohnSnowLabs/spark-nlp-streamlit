@@ -28,13 +28,13 @@ import pandas as pd
 jar_path = "../jars/"
 
 spark = SparkSession.builder \
-        .appName("Spark NLP Enterprise 2.4.2") \
+        .appName("Spark NLP 2.4.5") \
         .master("local[8]") \
-        .config("spark.driver.memory","4G") \
+        .config("spark.driver.memory","16G") \
         .config("spark.driver.maxResultSize", "1G") \
         .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer") \
         .config("spark.kryoserializer.buffer.max", "1000M")\
-        .config("spark.jars", "{}spark-nlp-assembly-2.4.3.jar".format(jar_path)) \
+        .config("spark.jars.packages", "com.johnsnowlabs.nlp:spark-nlp_2.11:2.4.5") \
         .getOrCreate()
 
 
