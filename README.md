@@ -1,7 +1,8 @@
 ### spark-nlp-streamlit
 
-Code samples to run Spark NLP modules with streamlit.io
+Code samples to run Spark NLP within Streamlit.io
 
-! pip install streamlit
-
-$ streamlit run streamlit_sparknlp.py
+```bash
+$ pip install -r requirements.txt
+$ streamlit run pretrained_pipelines/sparknlp_pretrained_pipeline_playground.py
+```
