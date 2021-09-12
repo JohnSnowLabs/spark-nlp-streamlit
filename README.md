@@ -1,5 +1,7 @@
 ### spark-nlp-streamlit
 
+## Deprecated in favor of [Streamlit in NLU](https://nlu.johnsnowlabs.com/docs/en/streamlit_viz_examples)
+
 Code samples to run Spark NLP within Streamlit.io
 
 ```bash
